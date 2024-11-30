@@ -32,7 +32,6 @@ include("utbot-modificators-analyzer")
 include("utbot-sample")
 include("utbot-java-fuzzing")
 include("utbot-fuzzing")
-include("utbot-junit-contest")
 include("utbot-analytics")
 include("utbot-analytics-torch")
 
