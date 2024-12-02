@@ -46,10 +46,6 @@ jobs:
         configuration:
           - plugin_type: IC
             extra_options: "-PideType=IC"
-            lang: java
-            dir: utbot-cli
-          - plugin_type: IC
-            extra_options: "-PideType=IC"
             lang: python
             dir: utbot-cli-python
           - plugin_type: IU
