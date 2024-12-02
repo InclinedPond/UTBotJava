@@ -144,7 +144,6 @@ jobs:
 
       - name: Build and run monitoring UTBot Java
         run: |
-          gradle :utbot-junit-contest:monitoringJar
           for i in $(seq ${{ inputs.run_number }})
           do
             java -jar \
@@ -198,8 +197,7 @@ jobs:
               --add-opens java.base/jdk.internal.util.xml.impl=ALL-UNNAMED \
               --add-opens java.base/jdk.internal.vm=ALL-UNNAMED \
               --add-opens java.base/jdk.internal.vm.annotation=ALL-UNNAMED \
-              -Dutbot.monitoring.settings.path=$monitoring_projects/${{ matrix.project }}/monitoring.properties \
-              utbot-junit-contest/build/libs/monitoring.jar \
+              -Dutbot.monitoring.settings.path=$monitoring_projects/${{ matrix.project }}/monitoring.properties 
               stats-$i.json
             mv logs/utbot.log logs/utbot-$i.log
           done
