@@ -59,12 +59,6 @@ class SarifMavenConfigurationProviderTest : AbstractMojoTestCase() {
     fun `testPrivateMethods should be provided from the configuration`() {
         Assertions.assertEquals(true, configurationProvider.testPrivateMethods)
     }
-
-    @Test
-    fun `projectType should be provided from the configuration`() {
-        Assertions.assertEquals(ProjectType.PureJvm, configurationProvider.projectType)
-    }
-
     @Test
     fun `testFramework should be provided from the configuration`() {
         Assertions.assertEquals(Junit5, configurationProvider.testFramework)

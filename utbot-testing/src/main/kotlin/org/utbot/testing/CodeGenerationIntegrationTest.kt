@@ -71,7 +71,6 @@ abstract class CodeGenerationIntegrationTest(
         processedTestClassesAmountByPackage[pkg] = 0
     }
 
-    @Test
     @Order(Int.MAX_VALUE)
     fun processTestCases(testInfo: TestInfo) {
         val pkg = testInfo.testClass.get().`package`

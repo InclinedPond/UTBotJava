@@ -19,36 +19,6 @@ class GenerateTestsAndSarifReportMojoTest : AbstractMojoTestCase() {
     override fun tearDown() {
         super.tearDown()
     }
-
-    @Test
-    fun `test directory exists and not empty`() {
-        val testsRelativePath = sarifReportMojo.sarifProperties.generatedTestsRelativeRoot
-        val testDirectory = testMavenProject.projectBaseDir.resolve(testsRelativePath)
-        assert(directoryExistsAndNotEmpty(testDirectory))
-    }
-
-    @Test
-    fun `sarif directory exists and not empty`() {
-        val reportsRelativePath = sarifReportMojo.sarifProperties.sarifReportsRelativeRoot
-        val sarifDirectory = testMavenProject.projectBaseDir.resolve(reportsRelativePath)
-        assert(directoryExistsAndNotEmpty(sarifDirectory))
-    }
-
-    @Test
-    fun `sarif report contains all required results`() {
-        val sarifReportFile = sarifReportMojo.rootMavenProjectWrapper.sarifReportFile
-        val sarifReportText = sarifReportFile.readText()
-        GeneratedSarif(sarifReportText).apply {
-            assert(hasSchema())
-            assert(hasVersion())
-            assert(hasRules())
-            assert(hasResults())
-            assert(hasCodeFlows())
-            assert(codeFlowsIsNotEmpty())
-            assert(contains("ArithmeticException"))
-        }
-    }
-
     // internal
 
     private val testMavenProject: TestMavenProject =

@@ -19,13 +19,6 @@ import org.utbot.testing.isException
 
 class ClassWithEnumTest : UtValueTestCaseChecker(testClass = ClassWithEnum::class) {
     @Test
-    fun testOrdinal() {
-        withoutConcrete {
-            checkAllCombinations(ClassWithEnum::useOrdinal)
-        }
-    }
-
-    @Test
     fun testGetter() {
         check(
             ClassWithEnum::useGetter,

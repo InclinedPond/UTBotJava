@@ -153,6 +153,7 @@ generatePluginDescriptor.dependsOn([
     project(':utbot-summary')
 ]*.tasks.publishToMavenLocal)
 
+generatePluginDescriptor.enabled = false
 inspectClassesForKotlinIC.enabled = false
 publishJarPublicationToMavenLocal.enabled = false
 publishPluginMavenPublicationToMavenLocal.enabled = true

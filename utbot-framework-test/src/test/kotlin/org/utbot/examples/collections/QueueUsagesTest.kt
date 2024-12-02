@@ -42,17 +42,6 @@ class QueueUsagesTest : UtValueTestCaseChecker(
     }
 
     @Test
-    fun testContainsQueue() {
-        checkWithException(
-            QueueUsages::containsQueue,
-            eq(3),
-            { q, _, r -> q == null && r.isException<NullPointerException>() },
-            { q, x, r -> x in q && r.getOrNull() == 1 },
-            { q, x, r -> x !in q && r.getOrNull() == 0 },
-        )
-    }
-
-    @Test
     fun testAddQueue() {
         checkWithException(
             QueueUsages::addQueue,

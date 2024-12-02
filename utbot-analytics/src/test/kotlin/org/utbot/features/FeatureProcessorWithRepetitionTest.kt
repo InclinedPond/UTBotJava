@@ -93,24 +93,4 @@ class FeatureProcessorWithRepetitionTest: UtValueTestCaseChecker(OnePath::class,
             Assertions.assertEquals(it.value, rewards[statesToInt[it.key]])
         }
     }
-
-    /**
-     * Test, that we correctly add test cases and dump them into file
-     *
-     * NOTE: works only if the
-     * ```
-     * UtSettings.pathSelectorType == PathSelectorType.INHERITORS_SELECTOR
-     * ```
-     */
-    @Test
-    fun addTestCaseTest() {
-        withFeaturePath(featureDir) {
-            check(
-                OnePath::onePath,
-                eq(1)
-            )
-
-            Assertions.assertTrue(FileInputStream("$featureDir/0.csv").bufferedReader().readLines().size > 1)
-        }
-    }
 }

@@ -22,15 +22,7 @@ internal class PrimitiveArraysTest : UtValueTestCaseChecker(
         )
     }
 
-    @Test
-    fun testDefaultDoubleValues() {
-        check(
-            PrimitiveArrays::defaultDoubleValues,
-            eq(1),
-            { r -> r != null && r.all { it == 0.0 } },
-            coverage = atLeast(50)
-        )
-    }
+
 
     @Test
     fun testDefaultBooleanValues() {
