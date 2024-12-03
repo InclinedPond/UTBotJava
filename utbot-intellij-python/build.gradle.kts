@@ -68,6 +68,10 @@ tasks {
         sourceCompatibility = "17"
     }
 
+    buildSearchableOptions {
+        enabled = false
+    }
+
     patchPluginXml {
         sinceBuild.set("223")
         untilBuild.set("232.*")

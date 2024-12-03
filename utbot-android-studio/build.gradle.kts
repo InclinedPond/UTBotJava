@@ -39,6 +39,22 @@ tasks {
         }
     }
 
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
+    }
+
+    compileTestJava {
+        targetCompatibility = "11"
+        sourceCompatibility = "11"
+    }
+
+    compileJava {
+        targetCompatibility = "11"
+        sourceCompatibility = "11"
+    }
+
     java {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11

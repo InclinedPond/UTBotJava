@@ -130,6 +130,10 @@ tasks {
         sourceCompatibility = "17"
     }
 
+    buildSearchableOptions {
+        enabled = false
+    }
+
     java {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
