@@ -15,6 +15,22 @@ tasks {
         }
     }
 
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = "17"
+        }
+    }
+
+    compileTestJava {
+        targetCompatibility = "17"
+        sourceCompatibility = "17"
+    }
+
+    compileJava {
+        targetCompatibility = "17"
+        sourceCompatibility = "17"
+    }
+
     java {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_17

@@ -52,6 +52,22 @@ tasks {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = "17"
+        }
+    }
+
+    compileTestJava {
+        targetCompatibility = "17"
+        sourceCompatibility = "17"
+    }
+
+    compileJava {
+        targetCompatibility = "17"
+        sourceCompatibility = "17"
+    }
+
     patchPluginXml {
         sinceBuild.set("223")
         untilBuild.set("232.*")

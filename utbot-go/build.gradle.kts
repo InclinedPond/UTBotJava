@@ -15,6 +15,22 @@ tasks {
         }
     }
 
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = "17"
+        }
+    }
+
+    compileTestJava {
+        targetCompatibility = "17"
+        sourceCompatibility = "17"
+    }
+
+    compileJava {
+        targetCompatibility = "17"
+        sourceCompatibility = "17"
+    }
+
     test {
         useJUnitPlatform()
     }
