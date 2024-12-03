@@ -16,25 +16,3 @@ jobs:
   build-and-run-tests:
     uses: ./.github/workflows/build-and-run-tests-from-branch.yml
     secrets: inherit
-
-  publish_plugin:
-    needs: build-and-run-tests
-    uses: ./.github/workflows/publish-plugin-from-branch.yml
-    with:
-      # upload artifacts on push action to main only
-      upload-artifact: ${{ github.event_name == 'push' }}
-    secrets: inherit
-
-  publish_cli:
-    needs: build-and-run-tests
-    uses: ./.github/workflows/publish-cli-from-branch.yml
-    with:
-      # upload artifacts on push action to main only
-      upload-artifact: ${{ github.event_name == 'push' }}
-    secrets: inherit
-
-  publish-cli-image:
-    needs: build-and-run-tests
-    if: ${{ github.event_name == 'push' }}
-    uses: ./.github/workflows/publish-cli-image-from-branch.yml
-    secrets: inherit
