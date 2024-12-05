@@ -23,7 +23,7 @@ dependencies {
     fetchInstrumentationJar project(path: ':utbot-instrumentation', configuration: 'instrumentationArchive')
     implementation project(':utbot-framework-api')
 
-    testImplementation configurations.fetchInstrumentationJar
+    testImplementation configurations.fetchInstrumentationJar.getDependencies()
     testImplementation project(':utbot-sample')
     testImplementation group: 'org.jacoco', name: 'org.jacoco.report', version: jacocoVersion
     implementation group: 'com.jetbrains.rd', name: 'rd-framework', version: rdVersion
